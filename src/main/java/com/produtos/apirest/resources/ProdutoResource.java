@@ -47,7 +47,16 @@ public class ProdutoResource {
 	public @ResponseBody Produto salvaProduto(@RequestBody @Valid Produto produto) {
 		return produtoRepository.save(produto);
 	}
-
+	
+	@DeleteMapping("/produto")
+	public void deletaProduto(@RequestBody @Valid Produto produto) {
+		produtoRepository.delete(produto);
+	}
+	
+	@PutMapping("/produto")
+	public @ResponseBody Produto atualizaProduto(@RequestBody @Valid Produto produto) {
+		return produtoRepository.save(produto);
+	}
 	 
 
 }
