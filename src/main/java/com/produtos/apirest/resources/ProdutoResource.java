@@ -57,6 +57,6 @@ public class ProdutoResource {
 	public @ResponseBody Produto atualizaProduto(@RequestBody @Valid Produto produto) {
 		return produtoRepository.save(produto);
 	}
-	 
+
 
 }
