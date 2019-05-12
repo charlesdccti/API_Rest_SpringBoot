@@ -29,6 +29,11 @@ public class LembreteResource {
         return this.lembreteService.findById(id);
     }
 
+    @PostMapping(value="/lembrete", produces="application/json")
+    public @ResponseBody Lembrete salvaLembrete(@RequestBody @Valid Lembrete lembrete) {
+        return lembreteService.save(lembrete);
+    }
+
 
     @DeleteMapping("/lembrete")
     public void deletaLembrete(@RequestBody @Valid Lembrete lembrete) {
@@ -37,7 +42,7 @@ public class LembreteResource {
 
 
     @PutMapping("/lembrete")
-    public @ResponseBody Lembrete atualizaProduto(@RequestBody @Valid Lembrete lembrete) {
+    public @ResponseBody Lembrete atualizaLembrete(@RequestBody @Valid Lembrete lembrete) {
         return lembreteService.save(lembrete);
     }
 
