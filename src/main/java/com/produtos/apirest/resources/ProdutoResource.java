@@ -25,7 +25,7 @@ import com.produtos.apirest.repository.ProdutoRepository;
  *
  */
 @RestController
-@RequestMapping(value="/api")
+@RequestMapping(value="/api/admin")
 public class ProdutoResource {
 	
 	@Autowired
