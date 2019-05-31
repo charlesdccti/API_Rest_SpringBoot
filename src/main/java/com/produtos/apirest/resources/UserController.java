@@ -1,4 +1,4 @@
-package com.produtos.apirest.repository;
+package com.produtos.apirest.resources;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
