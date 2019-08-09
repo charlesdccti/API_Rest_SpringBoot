@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ApirestApplication",
+            "request": "launch",
+            "mainClass": "com.produtos.apirest.ApirestApplication",
+            "projectName": "apirest"
+        }
+    ]
+}
