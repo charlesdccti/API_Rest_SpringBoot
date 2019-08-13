@@ -30,9 +30,7 @@ import com.produtos.apirest.service.ProdutoService;
 public class ProdutoResource {
 	
 	@Autowired
-	ProdutoService produtoService;
-	//ProdutoRepository produtoRepository;
-	
+	ProdutoService produtoService;	
 	
 	
 	@GetMapping(value="/produtos", produces="application/json")
