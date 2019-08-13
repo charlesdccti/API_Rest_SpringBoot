@@ -37,10 +37,37 @@ public class ProdutoRepositoryTest {
     }
 
     
+//    @Test
+//    public void update_Should_ChangeAndPersistData() {
+//        Produto produto = new Produto("sapato", BigDecimal.valueOf(1), BigDecimal.valueOf(1));
+//        this.produtoRepository.save(produto);
+//        produto.setNome("sapatenis");
+//        produto.setValor(BigDecimal.valueOf(500));
+//        this.produtoRepository.save(produto);
+//        Assertions.assertThat(produto.getId()).isNotNull();
+//        Assertions.assertThat(produto.getNome()).isEqualTo("sapatenis");
+//        Assertions.assertThat(produto.getValor()).isNotNull();
+//    }
+//
+//    @Test
+//    public void delete() {
+//        Produto produto = new Produto("sapato", BigDecimal.valueOf(2), BigDecimal.valueOf(1000));
+//        this.produtoRepository.save(produto);
+//        this.produtoRepository.delete(produto);
+//        Assertions.assertThat(produtoRepository.findById(produto.getId())).isNull();
+//    }
+//    
+//    @Test
+//    public void sizeListAll() {
+//        Produto produto = new Produto("sapateste", BigDecimal.valueOf(1), BigDecimal.valueOf(1));
+//        produtoRepository.save(produto);
+//        
+//    	//Assertions.assertThat(produtoRepository.findAll().size()).isNotNull();
+//    	
+//	}
+    
     
 };
-
-
 
 
 
