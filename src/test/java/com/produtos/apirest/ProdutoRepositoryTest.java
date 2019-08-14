@@ -4,7 +4,6 @@ import com.produtos.apirest.models.Produto;
 import com.produtos.apirest.repository.ProdutoRepository;
 
 import org.assertj.core.api.Assertions;
-import org.hibernate.exception.ConstraintViolationException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -18,6 +17,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Optional;
+
+import javax.validation.ConstraintViolationException;
+import javax.validation.UnexpectedTypeException;
 
 
 @RunWith(SpringRunner.class)
@@ -81,16 +83,58 @@ public class ProdutoRepositoryTest {
         assertThat(produtoRepository.findAll().size()).isEqualTo(3); // removido com sucesso
     }
     
-	 
-	//    public void save_WhenNameIsNull_Should_Throw_ConstraintViolationException() {
-	//		
-	//		thrown.expect(ConstraintViolationException.class);
-	//		thrown.expectMessage("O campo nome do produto é obrigatório");
-	//		
-	//		this.produtoRepository.save(new Produto());
-	//	}
+    
+    @Test
+    public void save_WhenNameIsNull_Should_Throw_ConstraintViolationException() {
+		
+    	thrown.expect(ConstraintViolationException.class);
+		thrown.expectMessage("O campo nome do produto é obrigatório");
+		
+		this.produtoRepository.save(new Produto());
+		
+	}
     
     
+    @Test
+    public void save_WhenValorIsNull_Should_Throw_ConstraintViolationException() {
+		
+    	thrown.expect(ConstraintViolationException.class);
+		thrown.expectMessage("O campo valor do produto é obrigatório");
+		
+		this.produtoRepository.save(new Produto());
+		
+	}
+    
+    
+    @Test
+    public void save_WhenQuantidadeIsNull_Should_Throw_ConstraintViolationException() {
+		
+    	thrown.expect(ConstraintViolationException.class);
+		thrown.expectMessage("O campo quantidade do produto é obrigatório");
+		
+		this.produtoRepository.save(new Produto());
+		
+	}
+    
+    @Test
+    public void save_WhenQuantidadeIsNegative_Should_Throw_ConstraintViolationException() {
+		
+    	thrown.expect(ConstraintViolationException.class);
+		thrown.expectMessage("Quantidade deve ser um valor positivo");
+		
+		this.produtoRepository.save(new Produto("sapato", -2, 2));
+		
+	}
+    
+    @Test
+    public void save_WhenValorIsNegative_Should_Throw_ConstraintViolationException() {
+		
+    	thrown.expect(ConstraintViolationException.class);
+		thrown.expectMessage("Valor deve ser um numero positivo");
+		
+		this.produtoRepository.save(new Produto("sapato", 2, -2));
+		
+	}
 };
 
 
