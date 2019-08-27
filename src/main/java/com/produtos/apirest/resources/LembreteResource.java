@@ -43,8 +43,8 @@ public class LembreteResource {
         lembreteService.delete(lembrete);
     }
 
-    @PutMapping("/lembrete")
-    public @ResponseBody Lembrete atualizaLembrete(@RequestBody @Valid Lembrete lembrete) {
+    @PutMapping("/lembrete/{id}")
+    public @ResponseBody Lembrete atualizaLembrete(@RequestBody @Valid Lembrete lembrete, @PathVariable(value = "id") long id) {
         return lembreteService.save(lembrete);
     }
 
