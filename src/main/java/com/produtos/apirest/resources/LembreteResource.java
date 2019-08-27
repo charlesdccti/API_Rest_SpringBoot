@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value="/api")
 public class LembreteResource {
@@ -17,12 +18,10 @@ public class LembreteResource {
     private LembreteService lembreteService;
 
 
-
-    @GetMapping(value="/lembretes", produces="application/json")
+    @GetMapping(value="/lembrete", produces="application/json")
     public @ResponseBody List<Lembrete> listaLembretes(){
         return lembreteService.findAll();
     }
-
 
     @GetMapping(value = "/lembrete/{id}", produces="application/json")
     public @ResponseBody Lembrete findById(@PathVariable(value = "id") long id){
@@ -34,16 +33,20 @@ public class LembreteResource {
         return lembreteService.save(lembrete);
     }
 
+    @DeleteMapping("/lembrete/{id}")
+    public void deletaLembreteById(@PathVariable(value = "id") long id) {
+        lembreteService.deleteById(id);
+    }
 
     @DeleteMapping("/lembrete")
     public void deletaLembrete(@RequestBody @Valid Lembrete lembrete) {
         lembreteService.delete(lembrete);
     }
 
-
     @PutMapping("/lembrete")
     public @ResponseBody Lembrete atualizaLembrete(@RequestBody @Valid Lembrete lembrete) {
         return lembreteService.save(lembrete);
     }
+
 
 }

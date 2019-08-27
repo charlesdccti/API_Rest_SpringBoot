@@ -19,9 +19,10 @@ public class Lembrete {
     @Column
     private Prioridade prioridade;
     @Column
-    private Boolean arquivado;
-    @Column
     private Long modificado;
+    @Column
+    private Boolean arquivado;
+
 
 
 

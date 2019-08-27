@@ -35,4 +35,9 @@ public class LembreteService {
         public void delete(Lembrete entity) {
             lembreteRepository.delete(entity);
         }
+
+    @Transactional(readOnly = false)
+    public void deleteById(long id) {
+        lembreteRepository.deleteById(id);
+    }
 }
