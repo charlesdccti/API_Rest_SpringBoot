@@ -4,6 +4,7 @@ import com.produtos.apirest.util.Prioridade;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
@@ -22,6 +23,11 @@ public class Lembrete {
     private Long modificado;
     @Column
     private Boolean arquivado;
+    @Column
+    private BigDecimal numeroUsuarios;
+    @Column
+    private String cor;
+
 
 
 
@@ -96,5 +102,21 @@ public class Lembrete {
                 ", arquivado=" + arquivado +
                 ", modificado=" + modificado +
                 '}';
+    }
+
+    public BigDecimal getNumeroUsuarios() {
+        return numeroUsuarios;
+    }
+
+    public void setNumeroUsuarios(BigDecimal numeroUsuarios) {
+        this.numeroUsuarios = numeroUsuarios;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 }

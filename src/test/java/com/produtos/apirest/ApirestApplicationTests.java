@@ -11,6 +11,7 @@ public class ApirestApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println("executou esse teste!");
 	}
 
 }

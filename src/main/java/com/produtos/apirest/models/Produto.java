@@ -1,14 +1,9 @@
 package com.produtos.apirest.models;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 /**
  * @author charles
@@ -33,7 +28,11 @@ public class Produto implements Serializable{
 	@NotNull
 	private BigDecimal valor;
 
-	
+	@NotNull
+	private BigDecimal numeroUsuarios;
+
+	@NotNull
+	private String cor;
 	
 	
 
@@ -80,9 +79,21 @@ public class Produto implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
 
-	
 
+	public BigDecimal getNumeroUsuarios() {
+		return numeroUsuarios;
+	}
+
+	public void setNumeroUsuarios(BigDecimal numeroUsuarios) {
+		this.numeroUsuarios = numeroUsuarios;
+	}
+
+	public String getCor() {
+		return cor;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
+	}
 }
