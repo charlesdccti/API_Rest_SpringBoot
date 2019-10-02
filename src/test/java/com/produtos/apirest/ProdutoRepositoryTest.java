@@ -36,7 +36,8 @@ public class ProdutoRepositoryTest {
 
     @Test
     public void sizeListAll() {
-        int size = produtoRepository.findAll().size();
+        System.out.println("teste de charles");
+        //int size = produtoRepository.findAll().size();
         //assertThat(produtoRepository.findAll().size()).isEqualTo(size);
     }
 

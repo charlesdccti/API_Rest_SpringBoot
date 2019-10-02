@@ -3,15 +3,15 @@ package com.produtos.apirest.resources;
 
 import com.produtos.apirest.models.Lembrete;
 import com.produtos.apirest.service.LembreteService;
+import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value="/api")
+@RequestMapping(value="/v1/api")
 public class LembreteResource {
 
     @Autowired
