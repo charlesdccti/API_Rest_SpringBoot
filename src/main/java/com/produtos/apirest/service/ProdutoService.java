@@ -25,6 +25,9 @@ public class ProdutoService {
 
     @Transactional(readOnly = false)
     public Produto save(Produto entity) {
+    	Integer indexInicio = "C:\fakepath\\".length()+1;
+    	String foto = entity.getFoto().substring(indexInicio, entity.getFoto().length());
+    	entity.setFoto(foto);
         return produtoRepository.save(entity);
     }
 
